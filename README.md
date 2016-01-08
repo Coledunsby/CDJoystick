@@ -61,7 +61,16 @@ Alternatively, you can install it manually by copying the file `Pod/Classes/CDJo
     joystick.fade = 0.5
     ```
 
-4. Add the joystick to your view:
+4. Setup the tracking handler to get velocity and angle data:
+  
+    ```
+    joystick.trackingHandler = { (joystickData) -> () in
+        self.objectView.center.x += joystickData.velocity.x
+        self.objectView.center.y += joystickData.velocity.y
+    }
+    ```
+
+5. Add the joystick to your view:
 
     ```
     view.addSubview(joystick)
