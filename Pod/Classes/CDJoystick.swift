@@ -32,8 +32,8 @@ public class CDJoystick: UIView {
     @IBInspectable public var fade: CGFloat = 0.5 { didSet { setNeedsDisplay() }}
     
     public var trackingHandler: ((CDJoystickData) -> ())?
-    public var data = CDJoystickData()
     
+    private var data = CDJoystickData()
     private var stickView = UIView(frame: CGRect(origin: .zero, size: .zero))
     private var displayLink: CADisplayLink?
     
