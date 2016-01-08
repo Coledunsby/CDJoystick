@@ -1,24 +1,32 @@
 # CDJoystick
 
-[![CI Status](http://img.shields.io/travis/Cole Dunsby/CDJoystick.svg?style=flat)](https://travis-ci.org/Cole Dunsby/CDJoystick)
 [![Version](https://img.shields.io/cocoapods/v/CDJoystick.svg?style=flat)](http://cocoapods.org/pods/CDJoystick)
-[![License](https://img.shields.io/cocoapods/l/CDJoystick.svg?style=flat)](http://cocoapods.org/pods/CDJoystick)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://cocoapods.org/pods/CDJoystick)
 [![Platform](https://img.shields.io/cocoapods/p/CDJoystick.svg?style=flat)](http://cocoapods.org/pods/CDJoystick)
+[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
+             )](https://developer.apple.com/swift/)
 
-## Usage
+## What is it?
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+CDJoystick is a Joystick for UIKit.
 
-## Requirements
+It is written in Swift 2 and uses `IBDesignable`, `IBInspectable` and Core Graphics.
 
 ## Installation
 
 CDJoystick is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```
 pod "CDJoystick"
 ```
+
+Alternatively, you can install it manually by copying the file `Pod/Classes/CDJoystick.swift` into your project.
+
+
+## Usage
+
+...
 
 ## Author
 

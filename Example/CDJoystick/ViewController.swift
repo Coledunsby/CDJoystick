@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import CDJoystick
 
 class ViewController: UIViewController {
 
+    @IBOutlet private weak var joystickMove: CDJoystick!
+    @IBOutlet private weak var joystickRotate: CDJoystick!
+    @IBOutlet private weak var objectView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        joystickMove.trackingHandler = { (joystickData) -> () in
+            //print("joystickMove data: \(joystickData)")
+            
+            let scale: CGFloat = 5.0
+            
+            self.objectView.center.x += joystickData.velocity.x * scale
+            self.objectView.center.y += joystickData.velocity.y * scale
+        }
+        
+        joystickRotate.trackingHandler = { (joystickData) -> () in
+            //print("joystickRotate data: \(joystickData)")
+            
+            self.objectView.transform = CGAffineTransformMakeRotation(joystickData.angle)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func resetButtonTapped(sender: AnyObject) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.objectView.center = self.view.center
+            self.objectView.transform = CGAffineTransformIdentity
+        }
     }
-
+    
 }
 

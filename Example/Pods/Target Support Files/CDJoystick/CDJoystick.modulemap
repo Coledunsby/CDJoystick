@@ -1,0 +1,6 @@
+framework module CDJoystick {
+  umbrella header "CDJoystick-umbrella.h"
+
+  export *
+  module * { export * }
+}

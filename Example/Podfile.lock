@@ -1,0 +1,14 @@
+PODS:
+  - CDJoystick (0.1.0)
+
+DEPENDENCIES:
+  - CDJoystick (from `../`)
+
+EXTERNAL SOURCES:
+  CDJoystick:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CDJoystick: 3d50f872bb54ae0023e064185e9e8a4f2896395d
+
+COCOAPODS: 0.39.0
