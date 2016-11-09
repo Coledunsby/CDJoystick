@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.license           = { :type => "MIT", :file => 'LICENSE' }
     s.platform          = :ios, "9.0"
     s.requires_arc      = true
-    s.source            = { :git => "https://github.com/Coledunsby/CDJoystick", :tag => "v/#{s.version}" }
-    s.source_files      = "CDJoystick/CDJoystick.swift"
+    s.source            = { :git => "https://github.com/Coledunsby/CDJoystick.git", :tag => "v/#{s.version}" }
+    s.source_files      = "CDJoystick.swift"
     s.module_name       = s.name
 end
