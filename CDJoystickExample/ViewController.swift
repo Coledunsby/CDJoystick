@@ -65,7 +65,7 @@ final class ViewController: UIViewController {
         view.addSubview(joystick)
     }
     
-    @IBAction func resetButtonTapped(_ sender: AnyObject) {
+    @IBAction private func resetButtonTapped(_ sender: AnyObject) {
         UIView.animate(withDuration: 0.5) {
             self.spaceshipImageView.center = self.view.center
             self.spaceshipImageView.transform = .identity
