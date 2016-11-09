@@ -10,7 +10,7 @@
 
 CDJoystick is a Joystick for UIKit.
 
-It is written in Swift 2 and uses `IBDesignable`, `IBInspectable` and Core Graphics.
+It is written in Swift 3 and uses `IBDesignable`, `IBInspectable` and Core Graphics.
 
 ## Installation
 
@@ -21,7 +21,7 @@ it, simply add the following line to your Podfile:
 pod "CDJoystick"
 ```
 
-Alternatively, you can install it manually by copying the file `Pod/Classes/CDJoystick.swift` into your project.
+Alternatively, you can install it manually by copying the file `CDJoystick.swift` into your project.
 
 
 ## Usage (Storyboards)
@@ -45,18 +45,18 @@ Alternatively, you can install it manually by copying the file `Pod/Classes/CDJo
     ```
     let joystick = CDJoystick()
     joystick.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-    joystick.backgroundColor = .clearColor()
+    joystick.backgroundColor = .clear
     ```
 
 3. Customize the joystick:
 
     ```
-    joystick.substrateColor = .lightGrayColor()
-    joystick.substrateBorderColor = .grayColor()
+    joystick.substrateColor = .lightGray
+    joystick.substrateBorderColor = .gray
     joystick.substrateBorderWidth = 1.0
     joystick.stickSize = CGSize(width: 50, height: 50)
-    joystick.stickColor = .darkGrayColor()
-    joystick.stickBorderColor = .blackColor()
+    joystick.stickColor = .darkGray
+    joystick.stickBorderColor = .black
     joystick.stickBorderWidth = 2.0
     joystick.fade = 0.5
     ```
@@ -64,7 +64,7 @@ Alternatively, you can install it manually by copying the file `Pod/Classes/CDJo
 4. Setup the tracking handler to get velocity and angle data:
   
     ```
-    joystick.trackingHandler = { (joystickData) -> () in
+    joystick.trackingHandler = { joystickData in
         self.objectView.center.x += joystickData.velocity.x
         self.objectView.center.y += joystickData.velocity.y
     }

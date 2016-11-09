@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CDJoystickExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYi-1j-7gY" customClass="CDJoystick" customModule="CDJoystickExample" customModuleProvider="target">
+                                <rect key="frame" x="20" y="547" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="V0d-hW-9Kv"/>
+                                    <constraint firstAttribute="width" constant="100" id="o3f-us-rqS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="stickColor">
+                                        <color key="value" red="0.51784205436706543" green="0.58159953355789185" blue="0.58617168664932251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="stickBorderColor">
+                                        <color key="value" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="substrateColor">
+                                        <color key="value" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="substrateBorderColor">
+                                        <color key="value" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="substrateBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="stickBorderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTt-jy-Eei" customClass="CDJoystick" customModule="CDJoystickExample" customModuleProvider="target">
+                                <rect key="frame" x="255" y="547" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9Xi-y1-UxS"/>
+                                    <constraint firstAttribute="width" constant="100" id="yOn-tT-n5G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="stickColor">
+                                        <color key="value" red="0.51784205439999997" green="0.58159953360000005" blue="0.58617168659999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="stickBorderColor">
+                                        <color key="value" red="0.42655369640000002" green="0.475846082" blue="0.4802647531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="substrateColor">
+                                        <color key="value" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="substrateBorderColor">
+                                        <color key="value" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="substrateBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="stickBorderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIc-Lc-I1z">
+                                <rect key="frame" x="137.5" y="577" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ayT-Ku-n6O"/>
+                                    <constraint firstAttribute="height" constant="40" id="fYc-e9-Lhv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YV4-bj-N3R"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="tG6-O8-kN0">
+                                <rect key="frame" x="137" y="299" width="100" height="68"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BYi-1j-7gY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9eZ-VR-98t"/>
+                            <constraint firstItem="UIc-Lc-I1z" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="J9t-gC-4om"/>
+                            <constraint firstItem="tG6-O8-kN0" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="UV9-Pe-fdZ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CTt-jy-Eei" secondAttribute="bottom" constant="20" id="fIQ-4V-Phj"/>
+                            <constraint firstItem="tG6-O8-kN0" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iPF-1T-Ugx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="BYi-1j-7gY" secondAttribute="bottom" constant="20" id="kI3-Xq-bAv"/>
+                            <constraint firstAttribute="trailing" secondItem="CTt-jy-Eei" secondAttribute="trailing" constant="20" id="mOn-vT-xVK"/>
+                            <constraint firstItem="UIc-Lc-I1z" firstAttribute="centerY" secondItem="BYi-1j-7gY" secondAttribute="centerY" id="q3s-gX-iWI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="joystickMove" destination="BYi-1j-7gY" id="byx-wl-eGu"/>
+                        <outlet property="joystickRotate" destination="CTt-jy-Eei" id="dXs-9a-mmc"/>
+                        <outlet property="spaceshipImageView" destination="tG6-O8-kN0" id="rD8-vK-oEY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="spaceship" width="100" height="68"/>
+    </resources>
+</document>
