@@ -60,8 +60,8 @@ public class CDJoystick: UIView {
     }
     
     private func setup() {        
-        displayLink = CADisplayLink(target: self, selector: #selector(CDJoystick.listen))
-        displayLink?.add(to: .current, forMode: RunLoopMode.commonModes)
+        displayLink = CADisplayLink(target: self, selector: #selector(listen))
+        displayLink?.add(to: .current, forMode: .commonModes)
     }
     
     public func listen() {
@@ -107,11 +107,11 @@ public class CDJoystick: UIView {
         let magV = sqrt(pow(distance.x, 2) + pow(distance.y, 2))
         
         if magV <= stickView.frame.size.width {
-            stickView.center = CGPoint(x: distance.x + bounds.size.width / 2, y: distance.y + bounds.size.width / 2)
+            stickView.center = CGPoint(x: distance.x + bounds.size.width / 2, y: distance.y + bounds.size.height / 2)
         } else {
             let aX = distance.x / magV * stickView.frame.size.width
-            let aY = distance.y / magV * stickView.frame.size.width
-            stickView.center = CGPoint(x: aX + bounds.size.width / 2, y: aY + bounds.size.width / 2)
+            let aY = distance.y / magV * stickView.frame.size.height
+            stickView.center = CGPoint(x: aX + bounds.size.width / 2, y: aY + bounds.size.height / 2)
         }
         
         let x = clamp(distance.x, lower: -bounds.size.width / 2, upper: bounds.size.width / 2) / (bounds.size.width / 2)

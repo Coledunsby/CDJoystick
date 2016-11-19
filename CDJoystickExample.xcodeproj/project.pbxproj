@@ -99,7 +99,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = JU6JS2KXPW;
+						DevelopmentTeam = W8W9HUZP5Z;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -250,7 +250,7 @@
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JU6JS2KXPW;
+				DEVELOPMENT_TEAM = W8W9HUZP5Z;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/CDJoystickExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -266,7 +266,7 @@
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JU6JS2KXPW;
+				DEVELOPMENT_TEAM = W8W9HUZP5Z;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/CDJoystickExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
