@@ -8,12 +8,21 @@
 
 import UIKit
 
+private extension ClosedRange {
+    
+    func clamp(_ value: Bound) -> Bound {
+        return min(max(value, lowerBound), upperBound)
+    }
+}
+
 final class ViewController: UIViewController {
 
     private let scale: CGFloat = 5.0
     
     @IBOutlet private weak var joystickMove: CDJoystick!
     @IBOutlet private weak var joystickRotate: CDJoystick!
+    @IBOutlet private weak var joystickMoveLabel: UILabel!
+    @IBOutlet private weak var joystickRotateLabel: UILabel!
     @IBOutlet private weak var spaceshipImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -21,22 +30,20 @@ final class ViewController: UIViewController {
         
         // addProgrammatically()
         
-        joystickMove.trackingHandler = { joystickData in
-            // print("joystickMove data: \(joystickData)")
+        joystickMove.trackingHandler = { [unowned self] joystickData in
+            print("joystickMove data: \(joystickData)")
             
-            self.spaceshipImageView.center.x = self.clamp(self.spaceshipImageView.center.x + joystickData.velocity.x * self.scale, lower: 0, upper: self.view.frame.width)
-            self.spaceshipImageView.center.y = self.clamp(self.spaceshipImageView.center.y + joystickData.velocity.y * self.scale, lower: 0, upper: self.view.frame.height)
+//            self.joystickMoveLabel.text = "\(joystickData)"
+            self.spaceshipImageView.center.x = (0 ... self.view.frame.width).clamp(self.spaceshipImageView.center.x + joystickData.velocity.x * self.scale)
+            self.spaceshipImageView.center.y = (0 ... self.view.frame.height).clamp(self.spaceshipImageView.center.y + joystickData.velocity.y * self.scale)
         }
         
-        joystickRotate.trackingHandler = { joystickData in
-            // print("joystickRotate data: \(joystickData)")
+        joystickRotate.trackingHandler = { [unowned self] joystickData in
+            print("joystickRotate data: \(joystickData)")
             
+//            self.joystickRotateLabel.text = "\(joystickData)"
             self.spaceshipImageView.transform = CGAffineTransform(rotationAngle: joystickData.angle)
         }
-    }
-    
-    private func clamp<T: Comparable>(_ value: T, lower: T, upper: T) -> T {
-        return min(max(value, lower), upper)
     }
     
     private func addProgrammatically() {
@@ -56,9 +63,9 @@ final class ViewController: UIViewController {
         joystick.fade = 0.5
         
         // 3. Setup the tracking handler to get velocity and angle data:
-        joystick.trackingHandler = { joystickData in
-            self.spaceshipImageView.center.x = self.clamp(self.spaceshipImageView.center.x + joystickData.velocity.x * self.scale, lower: 0, upper: self.view.frame.width)
-            self.spaceshipImageView.center.y = self.clamp(self.spaceshipImageView.center.y + joystickData.velocity.y * self.scale, lower: 0, upper: self.view.frame.height)
+        joystick.trackingHandler = { [unowned self] joystickData in
+            self.spaceshipImageView.center.x = (0 ... self.view.frame.width).clamp(self.spaceshipImageView.center.x + joystickData.velocity.x * self.scale)
+            self.spaceshipImageView.center.y = (0 ... self.view.frame.height).clamp(self.spaceshipImageView.center.y + joystickData.velocity.y * self.scale)
         }
         
         // 4. Add the joystick to your view:

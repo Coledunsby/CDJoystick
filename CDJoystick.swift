@@ -8,16 +8,26 @@
 
 import UIKit
 
-public struct CDJoystickData: CustomStringConvertible {
+private extension ClosedRange {
+    
+    func clamp(_ value: Bound) -> Bound {
+        return min(max(value, lowerBound), upperBound)
+    }
+}
+
+public struct CDJoystickData {
     
     /// (-1.0, -1.0) at bottom left to (1.0, 1.0) at top right
     public var velocity: CGPoint = .zero
     
     /// 0 at top middle to 6.28 radians going around clockwise
     public var angle: CGFloat = 0.0
+}
+
+extension CDJoystickData: CustomStringConvertible {
     
     public var description: String {
-        return "velocity: \(velocity), angle: \(angle)"
+        return "velocity: \(velocity)" + "\n" + String(format: "angle: %.02f", angle)
     }
 }
 
@@ -51,15 +61,15 @@ public class CDJoystick: UIView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        commonInit()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        commonInit()
     }
     
-    private func setup() {        
+    private func commonInit() {
         displayLink = CADisplayLink(target: self, selector: #selector(listen))
         displayLink?.add(to: .current, forMode: .commonModes)
     }
@@ -114,10 +124,10 @@ public class CDJoystick: UIView {
             stickView.center = CGPoint(x: aX + bounds.size.width / 2, y: aY + bounds.size.height / 2)
         }
         
-        let x = clamp(distance.x, lower: -bounds.size.width / 2, upper: bounds.size.width / 2) / (bounds.size.width / 2)
-        let y = clamp(distance.y, lower: -bounds.size.height / 2, upper: bounds.size.height / 2) / (bounds.size.height / 2)
+        let x = (-bounds.size.width / 2 ... bounds.size.width / 2).clamp(distance.x) / (bounds.size.width / 2)
+        let y = (-bounds.size.height / 2 ... bounds.size.height / 2).clamp(distance.y) / (bounds.size.height / 2)
 
-        data = CDJoystickData(velocity: CGPoint(x: x, y: y), angle: -atan2(x, y) + CGFloat(M_PI))
+        data = CDJoystickData(velocity: CGPoint(x: x, y: y), angle: -atan2(x, y) + .pi)
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -131,13 +141,10 @@ public class CDJoystick: UIView {
     private func reset() {
         tracking = false
         data = CDJoystickData()
+//        trackingHandler?(data)
         
         UIView.animate(withDuration: 0.25) {
             self.stickView.center = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
         }
-    }
-    
-    private func clamp<T: Comparable>(_ value: T, lower: T, upper: T) -> T {
-        return min(max(value, lower), upper)
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -91,22 +91,44 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="tG6-O8-kN0">
                                 <rect key="frame" x="137" y="299" width="100" height="68"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcK-ka-iYI">
+                                <rect key="frame" x="30.5" y="509.5" width="79.5" height="27.5"/>
+                                <string key="text">velocity: (0.0, 0.0)
+angle: 0.0</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-mW-IMh">
+                                <rect key="frame" x="265.5" y="509.5" width="79.5" height="27.5"/>
+                                <string key="text">velocity: (0.0, 0.0)
+angle: 0.0</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BYi-1j-7gY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9eZ-VR-98t"/>
                             <constraint firstItem="UIc-Lc-I1z" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="J9t-gC-4om"/>
                             <constraint firstItem="tG6-O8-kN0" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="UV9-Pe-fdZ"/>
+                            <constraint firstItem="IcK-ka-iYI" firstAttribute="centerX" secondItem="BYi-1j-7gY" secondAttribute="centerX" id="XgE-Kr-HoW"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CTt-jy-Eei" secondAttribute="bottom" constant="20" id="fIQ-4V-Phj"/>
                             <constraint firstItem="tG6-O8-kN0" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iPF-1T-Ugx"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="BYi-1j-7gY" secondAttribute="bottom" constant="20" id="kI3-Xq-bAv"/>
                             <constraint firstAttribute="trailing" secondItem="CTt-jy-Eei" secondAttribute="trailing" constant="20" id="mOn-vT-xVK"/>
                             <constraint firstItem="UIc-Lc-I1z" firstAttribute="centerY" secondItem="BYi-1j-7gY" secondAttribute="centerY" id="q3s-gX-iWI"/>
+                            <constraint firstItem="CTt-jy-Eei" firstAttribute="top" secondItem="o5U-mW-IMh" secondAttribute="bottom" constant="10" id="rwS-38-CD1"/>
+                            <constraint firstItem="o5U-mW-IMh" firstAttribute="centerX" secondItem="CTt-jy-Eei" secondAttribute="centerX" id="tBL-c2-iOB"/>
+                            <constraint firstItem="BYi-1j-7gY" firstAttribute="top" secondItem="IcK-ka-iYI" secondAttribute="bottom" constant="10" id="xDD-WW-L91"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="joystickMove" destination="BYi-1j-7gY" id="byx-wl-eGu"/>
+                        <outlet property="joystickMoveLabel" destination="IcK-ka-iYI" id="g9y-0D-lux"/>
                         <outlet property="joystickRotate" destination="CTt-jy-Eei" id="dXs-9a-mmc"/>
+                        <outlet property="joystickRotateLabel" destination="o5U-mW-IMh" id="Ydo-5o-2Qr"/>
                         <outlet property="spaceshipImageView" destination="tG6-O8-kN0" id="rD8-vK-oEY"/>
                     </connections>
                 </viewController>
