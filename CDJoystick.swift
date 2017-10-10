@@ -131,6 +131,7 @@ public class CDJoystick: UIView {
     private func reset() {
         tracking = false
         data = CDJoystickData()
+        trackingHandler?(data)
 
         UIView.animate(withDuration: 0.25) {
             self.stickView.center = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
