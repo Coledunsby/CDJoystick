@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
     s.name              = "CDJoystick"
-    s.version           = "1.0.0"
+    s.version           = "1.1.0"
+    s.swift_version     = "4.0"
     s.summary           = "Joystick for UIKit"
     s.homepage          = "https://github.com/Coledunsby/CDJoystick"
     s.authors           = { "Cole Dunsby" => "coledunsby@gmail.com" }
